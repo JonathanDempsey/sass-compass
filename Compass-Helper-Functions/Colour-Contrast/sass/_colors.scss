@@ -1,0 +1,33 @@
+// COLOR HELPERS
+
+$base: #4682B4;
+$lighten: adjust-lightness($base, 10%);
+
+.colors {
+	li {
+		background: $base;
+	}
+	li:nth-child(2) {
+		background: $lighten;
+	}
+	li:nth-child(3) {
+		background: adjust-saturation($base, 30%);
+	}
+	li:nth-child(4) {
+		@include background( linear-gradient($base, shade($base, 50%)) );
+	}
+	li:last-child {
+		background: tint($base, 40%);
+	}
+}
+
+
+.button {
+	@include contrasted($base); //Contrasts the button background with the button text
+	border: 2px solid shade($base, 25%);
+	border-bottom-width: 5px;
+	box-shadow: inset 0 1px $lighten;
+	&:hover {
+		@include contrasted(shade($base, 8%));
+	}
+}

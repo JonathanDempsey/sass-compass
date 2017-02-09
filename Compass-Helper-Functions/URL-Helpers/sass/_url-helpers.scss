@@ -1,0 +1,49 @@
+// Images
+//image-url finds the img folder defined in the config file
+@mixin easy-image($img) {
+	background-image: image-url($img);
+	width: image-width($img) / 2;
+	height: image-height($img) / 2;
+}
+
+.logo {
+	display: inline-block;
+	margin-right: .2em;
+	@include replace-text-with-dimensions('th-logo.png');
+}
+
+.designs {
+	li:first-child {
+		background-color: #36add1;
+		&:after {
+			@include easy-image('mixin-monster.png');
+		}
+	}
+	li:nth-child(2) {
+		background-color: #ff9100;
+		&:after {
+			@include easy-image('sass-monster.png');
+		}
+	}
+	li:last-child {
+		background-color: #a183c9;
+		&:after {
+			@include easy-image('reward.png');
+		}
+	}
+	li {
+		width: 33.05%;
+		height: 300px;
+	}
+	li:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+		background-size: 100%;
+	}
+}

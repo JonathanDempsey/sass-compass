@@ -1,0 +1,38 @@
+
+// INITIAL PAGE STYLES
+
+$br: .5em;
+
+* {
+	@include box-sizing(border-box);
+}
+body {
+	font: 1.1em/1.5 sans-serif;
+	background: #f7f7f7;
+}
+.container {
+	padding: 5% 5% 0;
+}
+h1 {
+	margin-bottom: .85em;
+	font-size: 1.7em;
+	vertical-align: top;
+	color: #47535b;
+	font-weight: bold;
+}
+.designs {
+	@include horizontal-list;
+	li {
+		position: relative;
+		margin-left: .4%;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	li:first-child {
+		border-radius: $br 0 0 $br;
+		margin-left: 0;
+	}
+	li:last-child {
+		border-radius: 0 $br $br 0;
+	}
+}

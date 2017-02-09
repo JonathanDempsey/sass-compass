@@ -1,0 +1,67 @@
+
+// PAGE STYLES
+
+$container-padding: 20px 40px 20px 40px;
+$h-margin: 1em 0 1.2em 0;
+
+* {
+	@include box-sizing(border-box);
+}
+body {
+	font: 1.1em/1.6 sans-serif;
+	color: #222;
+	background-color: #edeff0;
+}
+h1 {
+	font-size: 1.8em;
+	margin: $h-margin;
+}
+h2 {
+	font-size: 1.5em;
+	margin: $h-margin;
+}
+h3 {
+	font-weight: bold;
+	margin: $h-margin;
+}
+p {
+	margin-bottom: 1em;
+}
+.main-content {
+	padding: $container-padding;
+}
+.main-header {
+	padding: $container-padding;
+	background-color: #384047;
+}
+%head-links {
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 5px 15px;
+	border-radius: 5px;
+}
+.main-logo a {
+	background-color: #3ac162;
+	@extend %head-links;
+	@include single-text-shadow(rgba(0,0,0,.3), 0, 1px, 0);
+}
+.main-nav {
+	a {
+		background-color: #3f8abf;
+		@extend %head-links;
+	}
+	li {
+		@media (min-width: 0) and (max-width: 768px) {
+			margin-top: 12px;
+		}
+	}
+}
+.main-footer {
+	font-size: .85em;
+	padding: 2.5em 0;
+	text-align: center;
+	height: 100px;
+	background-color: #b7c0c7;
+}
